@@ -1,0 +1,15 @@
+footer {
+    min-height: 80px;
+    background-color: #212529;
+    color: #868e96;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 27px;
+
+}
+
+.author{
+    color: #ced4da;
+    padding-top:10px;
+    font-size: 18px;
+}

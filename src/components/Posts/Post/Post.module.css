@@ -1,0 +1,54 @@
+.post {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+.postImg img {
+    max-width: 100%;
+    cursor: pointer;
+    display: block;
+}
+
+.postImg {
+    width: 434px;
+}
+
+.mk {
+    background-color: #fff;
+    width: 434px;
+}
+.mk h2 {
+    padding: 20px 15px 20px 15px;
+}
+.mk p {
+    padding: 0 15px;
+    color: #777;
+}
+
+.postMore {
+    text-align: right;
+    margin-top: 100px;
+    padding: 0 10px 10px 0;
+}
+.postMore a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+.postMore a i::before {
+    content: ">";
+}
+
+@media screen and (max-width: 600px) {
+    .post {
+        flex-direction: column;
+        align-items: center;
+    }
+    .postImg  {
+        width: 380px;
+    }
+    .mk {
+        width: 380px;
+    } 
+}

@@ -1,0 +1,31 @@
+.header {
+    background-color: #6ccedd;
+    font-size: 18px;
+    font-weight: 600;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header ul {
+    display: flex;
+    flex-direction: row;
+}
+.header li {
+    list-style-type: none;
+    padding: 13px 27px 12px 27px;
+}
+.header li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header li:hover {
+    background-color: #26bec9;
+}
+
+@media screen and (max-width: 600px) {
+    .header li {
+        padding: 13px 7px 12px 7px;
+    }
+}

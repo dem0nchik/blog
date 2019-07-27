@@ -1,0 +1,52 @@
+.widget {
+    margin: 50px 10px 0 40px;
+}
+form input[type="submit"] {
+    padding: 3px 12px;
+    background-color: #26bec9;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+form input[type="submit"]:hover {
+    background-color:#6ccedd;
+}
+form input[type="search"] {
+    padding: 7px 0 7px 10px;
+    color: #555;
+    font-size: 14px;
+    border: 2px solid #e3e3e3;
+}
+.link a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+}
+.link p {
+    padding: 50px 0 20px;
+    font-size: 18px;
+}
+.linksVk::before{
+    width: 50px;
+    height: 50px;
+    display: block;
+    content: "";
+    background-image: url('https://cdn0.iconfinder.com/data/icons/communications-1/100/VK-512.png');
+    background-size: 50px;
+    background-repeat: no-repeat;
+}
+.linksInst::before{
+    width: 50px;
+    height: 50px;
+    display: block;
+    content: "";
+    background-image: url('https://cdn.iconscout.com/icon/free/png-512/instagram-71-227895.png');
+    background-size: 50px;
+    background-repeat: no-repeat;
+}
+.links {
+    display: flex;
+    flex-direction: row;
+}
