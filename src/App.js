@@ -2,18 +2,26 @@ import React from 'react';
 import './App.css';
 import Mainpage from './containers/Mainpage/Mainpage'
 import Aboutpage from './containers/Aboutpage/Aboutpage'
+import PostPage from './containers/PostPage/PostPage'
+import Signin from './components/Signin/Signin'
+import Login from './components/Login/Login'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Header />
+
         <Route exact path="/" component={Mainpage} />
-        <Route path="/about" component={Aboutpage} />
-        <form action='http://localhost:3003/api' method='post' encType='multipart/form-data'>
-          <input type='file' name='image'/>
-          <button type='submit'>Отправить</button>
-        </form>
+        <Route exact path="/about" component={Aboutpage} />
+        <Route exact path="/post" component={PostPage} />
+        <Route exact path="/login" component={Login} />        
+        <Route exact path="/signin" component={Signin} />
+
+        <Footer />
       </div>
     </Router>
   );

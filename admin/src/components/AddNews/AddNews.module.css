@@ -1,0 +1,123 @@
+.addNews {
+    margin-bottom: 30px;
+}
+.imageMain input {
+    display: none;
+}
+.imageMain {
+    display: block;
+    position: inherit;
+    font-family: calibri;
+    width: 160px;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px dashed #BBB;
+    text-align: center;
+    background-color: #DDD;
+    cursor: pointer;
+}
+.sended {
+    background-color: #049306;
+    padding: 10px 50px;
+    color: #fff;
+    margin: 10px 0;
+}
+.arrived {
+    color: #0bc20e;
+}
+.sendedWrap {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.err {
+    flex-direction: column;
+    color: #c20b0e;
+}
+.sended:hover {
+    opacity: 0.9;
+}
+.addNewPartBody {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 -10px 0;
+}
+.addNewPartBody button {
+    background-color: rgba(222, 106, 106, 0.3);
+    color: #222;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+.newsPartBody {
+    text-align: center;
+    font-weight: 600;
+    margin: 13px 0 -13px 0;
+}
+.imageMain:hover{
+    background-color: #eaeaea;
+}
+
+.titleMain {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.titleMain span {
+    margin: 20px 0 10px 70px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.titleMain textarea {
+    outline:none;
+    padding: 10px 10px;
+    margin:  0 10px;
+    font-size: 20px;
+    font-weight: 600;
+    max-width: 700px;
+    border: none;
+    background-color: #e4f0f5;
+    border-left: 3px solid #3d7e9a;
+    margin-bottom: 30px;
+    resize: none;
+}
+.titleMain textarea:hover {
+    background-color: #fefefe;
+}
+
+.imageMain {
+    margin: 50px 0 30px 30px;
+}
+.imgMainWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.imgpreviev {
+    margin-left: 80px;
+    max-width: 400px;
+    max-height: 350px;
+}
+@media screen and (max-width: 600px) {
+    .titleMain textarea {
+        margin-right: 20px;
+        max-width: 400px;
+        margin-bottom: 10px;
+        padding: 15px 10px;
+        font-size: 16px;
+    }
+    .imageMain {
+        margin: 20px 0 30px 0;
+    }
+    .imgMainWrap {
+        flex-direction: column;
+        padding-left: 1px;        
+        margin: 0 auto;
+    }
+    .imgpreviev {
+        width: 100%;
+        margin: 0 auto;
+    }
+}

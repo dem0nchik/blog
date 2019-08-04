@@ -1,0 +1,77 @@
+
+.changeComponents {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(-45deg, rgba(255, 249, 193, 0.6), rgba(38, 190, 201, 0.2));
+}
+.changeComponentsWrap {
+    margin-left: -60px;
+}
+
+.changeComponents button {
+    margin: 0 25px;
+    position: inherit;
+    left: -60px;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: #fff;
+    border-width: 1px;
+    transition-duration: 0.3s;
+}
+
+.changeComponents button[name='add'] {
+    background-color: #049306;
+}
+.changeComponents button[name='add']:hover {
+    background-color: #fff;
+    color: #049306;
+    border: 1px solid #049306;
+}
+.changeComponents button[name='edit'] {
+    background-color: #e49306;
+}
+.changeComponents button[name='edit']:hover {
+    background-color: #fff;
+    color: #e49306;
+    border: 1px solid #e49306;
+}
+.changeComponents button[name='delete'] {
+    background-color: #dd0606;
+}
+.changeComponents button[name='delete']:hover {
+    background-color: #fff;
+    color: #dd0606;
+    border: 1px solid #dd0606;
+}
+
+@media screen and (max-width: 600px) {
+    .changeComponents {
+        height: 65px;
+        justify-content: center;
+    }
+    .changeComponentsWrap {
+        margin-left: 0;
+        padding-left: 40px;
+    }
+    .changeComponents button {
+        margin: 0 5px;
+        padding: 5px 5px;
+        width: 95px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #070707;
+        transition-duration: 0.5s;
+    }
+    .changeComponents button[name='add'] {
+        background-color: rgba(4, 147, 6, 0.6);
+    }
+    .changeComponents button[name='edit'] {
+        background-color: rgba(228, 147, 6, 0.6);
+    }
+    .changeComponents button[name='delete'] {
+        background-color: rgba(221, 6, 6, 0.6);
+    }
+}

@@ -1,0 +1,8 @@
+.articles {
+    padding: 20px 0 30px 50px;
+}
+@media screen and (max-width: 600px) {
+    .articles {
+        padding: 20px 0 0 0px;
+    }
+}

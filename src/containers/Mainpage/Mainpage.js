@@ -1,19 +1,15 @@
 import React from 'react'
 import styles from './Mainpage.module.css'
-import Header from '../../components/Header/Header'
-import Posts from '../../components/Posts/Posts'
+import Articles from '../../components/Articles/Articles'
 import Widget from '../../components/Widget/Widget'
-import Footer from '../../components/Footer/Footer'
 
 const Mainpage = () => {
     return (
         <div className={styles.mainpage}>
-            <Header />
             <div className={styles.content}>
-                <Posts />
+                <Articles />
                 <Widget />
             </div>
-            <Footer />
         </div>
     )
 }

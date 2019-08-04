@@ -1,22 +1,10 @@
-const express = require('express');
-const server = express();
-const upload = require('express-fileupload');
+const app = require('./app');
+const config = require('./config');
+const mongoose = require('mongoose');
 
-server.use(upload());
+mongoose.connect(config.MONGO_URL, { useNewUrlParser: true })
 
-server.listen(3003);
+app.listen(config.PORT);
 
-server.post('/api', (req, res) => {
-    if(req.files) {
-        const image = req.files.image;
-        const imagename = image.name;
-        image.mv("public/photo/"+imagename, err => {
-            if(err) {
-                console.log(err);
-                res.send("error occured");
-            } else {
-                res.send("done");
-            }
-        })
-    }
-})
+
+

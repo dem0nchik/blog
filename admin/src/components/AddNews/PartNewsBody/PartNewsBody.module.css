@@ -1,0 +1,153 @@
+.partBody {
+    border-top: 2px solid #3f3f3f;
+    border-bottom: 2px solid #3f3f3f;
+    margin-top: 20px;
+}
+.inputTextWrap {
+    display: flex;
+    padding: 0 20px;
+    flex-direction: column;
+}
+.inputText {
+    color: #444;
+    font-size: 14px;
+    margin: 3px 0;
+    padding: 10px;
+    display: flex;
+    max-width: 700px;
+    min-height: 35px;
+    outline: none;
+    resize: none;
+}
+.inputTitle {
+    outline:none;
+    padding: 5px 10px;
+    margin:  10px 10px 20px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    width: 270px;
+    border: none;
+    background-color: #fefefe;
+    border-left: 1px solid #3d7e9a;
+    resize: none;
+}
+
+.addInputText {
+    margin: 10px 0 20px 50px;
+    padding: 5px 15px;
+    background-color: #DDD;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.imgInputsLabel input {
+    display: none;
+}
+.imgInputsLabel  {
+    display: block;
+    position: inherit;
+    font-family: calibri;
+    width: 70px;
+    font-size: 14px;
+    padding: 5px 20px;
+    margin: 10px 10px 0 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px dashed #eee;
+    text-align: center;
+    background-color: #9D9;
+    cursor: pointer;
+}
+.lables {
+    max-width: 600px;
+    flex-wrap:  wrap;
+    display: flex;
+    flex-direction: row;
+}
+.imgInputsLabel:hover, .imgInputsLabel:active  {
+    background-color: #ab8;
+}
+.imgInputsWrap {
+    border-top: 1px dashed #ddd;
+    display: flex;
+    flex-direction: column;
+}
+.imgInputsWrap img {
+    max-width: 200px;
+    max-height: 100px;
+}
+.imgprevievWrap {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px;
+}
+
+.previews {
+    max-width: 800px;
+    flex-wrap:  wrap;
+    display: flex;
+    flex-direction: row;
+}
+.previews span {
+    text-align: center;
+    font-size: 13px;
+    color: #de4020;
+}
+
+.addInputPhoto {
+    display: block;
+    margin: 10px 0 5px 50px;
+    padding: 5px 15px;
+    background-color: #eee;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+.acceptButton {
+    display: block;
+    margin: 10px auto;
+    padding: 7px 40px;
+    font-size: 17px;
+    background-color: #dfd;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+.accepted {
+    text-align: center;
+    color: #40de20;
+    margin: -2px 20px 0 0;
+}
+.acceptedWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.acceptedWrap i::before{
+    width: 20px;
+    height: 20px;
+    display: block;
+    content: "";
+    background-image: url('/photo/icon/w512h5121380984608delete.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+.acceptedWrap i:hover {
+    transition-duration: 0.5s;
+    filter: brightness(2);   
+}
+@media screen and (max-width: 600px) {
+    .inputText {
+        max-width: 350px;
+    }
+    .imgInputsWrap img {
+        max-width: 150px;
+        max-height: 50px;
+    }
+    .imgInputsLabel  {
+        width: 70px;
+        font-size: 11px;
+        padding: 2px 10px;
+    }
+}
