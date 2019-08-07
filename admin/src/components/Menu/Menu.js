@@ -13,13 +13,17 @@ class Menu extends React.Component {
     }
 
     onClickMenu() {
-        this.setState({toggleMenu: !this.state.toggleMenu});
+        this.setState({toggleMenu: false});
+        this.props.onClosedMenu()
+    }
+    onClicBtn() {
+        this.setState({toggleMenu: !this.state.toggleMenu})
     }
 
     menuItem() {
         return <>
                 { this.state.isMobile ?
-                    <div className={styles.menuButton} onClick={this.onClickMenu.bind(this)}>
+                    <div className={styles.menuButton} onClick={this.onClicBtn.bind(this)}>
                     <span></span> </div> :
                     <h2>Админ панель</h2> 
                 }
@@ -36,7 +40,7 @@ class Menu extends React.Component {
     render() {
         return ( 
             <>
-                {this.state.toggleMenu ?
+                {this.state.toggleMenu || this.props.onSwiped ?
                     <div className={`${styles.menu} ${styles.menuActive}`}> 
                         {this.menuItem()} </div> :
                     <div className={styles.menu}> 

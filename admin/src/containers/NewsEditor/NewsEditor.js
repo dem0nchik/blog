@@ -6,7 +6,7 @@ import RemoveNews from '../../components/RemoveNews/RemoveNews'
 
 class NewsEditor extends React.Component {
     state= {
-        changeComponents: <AddNews />
+        changeComponents: <AddNews />,
     }
     changeComponents = (e) => {
         const name = e ? e.currentTarget.name : '';
@@ -25,10 +25,11 @@ class NewsEditor extends React.Component {
                 this.setState({changeComponents: chngCom})
                 break
             default:
-                chngCom = <>asd</>
+                chngCom = <></>
                 this.setState({changeComponents: chngCom})
         }
     }
+    
     render() {
         return (
             <div className={styles.newsEditor}>

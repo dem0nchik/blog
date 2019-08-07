@@ -12,7 +12,7 @@ class AddNews extends React.Component {
         imgpreviev: null,
         partsBody: [],
         sended: false,
-        err: false
+        err: false,
     }
 
     componentDidMount() {
@@ -56,7 +56,8 @@ class AddNews extends React.Component {
         e.preventDefault()
 
         formData.append('date', getDate(new Date()))
-        
+
+        this.setState({errMessage: ''})
         if(body.length && title) {
             fetch(config.backEnd+'/posts', { 
                 method: 'POST',

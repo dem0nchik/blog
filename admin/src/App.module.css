@@ -1,5 +1,6 @@
 .App{
   padding-left: 200px;
+  min-height: 500px;
 }
 @media screen and (max-width: 600px) {
     .App{
