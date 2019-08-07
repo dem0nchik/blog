@@ -1,0 +1,15 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+}
+
+.loader img {
+    margin-top: 50px;
+    width: 60px;
+}
+@media screen and (max-width: 600px) {
+    .loader {
+        max-width: 400px;
+    }
+}

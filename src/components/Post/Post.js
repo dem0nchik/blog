@@ -1,34 +1,11 @@
 import React from 'react'
 import styles from './Post.module.css'
-/*
-const data = {
-    title: 'Великі сподівання: космічна програма Китаю',
-    date: 'Сентябрь 9, 2018',
-    views: 77,
-    mainImg: 'https://thealphacentauri.net/wp-content/uploads/2019/06/Change-3-Bejing-Control-Center-Yutu-deployment2.jpg',
-    body: [
-        {
-            title: '',
-            text: [
-                '3 січня 2019 року зонд Чан’е успішно сів на зворотний бік місяця, привернувши увагу всього світу до китайської космічної програми. Хоча китай включився в гонку з освоєння космосу пізніше за інших, він пройшов шлях від першої людини в космосі до першої висадки модуля на зворотному боці місяця усього за 15 років і не має наміру зупинятись. На чому базується космічна програма піднебесної – у своїй статті з’ясували автори журналу Space, The Universe & Everything.',
-            ],
-            img: []
-        },
-        {
-            title: 'Словник китайського «космосу»',
-            text: [
-                '«Чан’е» – це серія апаратів для освоєння Місяця. Посадку на зворотний бік супутника Землі здійснив зонд під номером 4. Це стало продовженням попередньої місії 2013 року, коли за допомогою автоматичної міжпланетної станції «Чан’е-3» на Місяць було доставлено місяцехід «Юйту». Наступні місії «Чан’е-5» і «Чан’е-6» мають доставити зразки з Місяця на Землю для досліджень. У січні 2019 року поверхнею Місяця «прогулявся» місяцехід «Юйту-2» (з кит. – «Нефритовий кролик»). Ці назви запозичені з китайської міфології. У стародавньому Китаї вважали, що в палаці на Місяці живе кролик, який товче у ступі зілля безсмертя. А міфічна Чан’е, дружина борця із чудовиськами стрільця Хоу Ї, вкрала зілля безсмертя, полетіла на Місяць і перетворилася там на жабу. У більш пізніх версіях перекази про Чан’е і місячного кролика поступово злилися в одне ціле: Чан’е стала богинею Місяця, що живе в палаці разом із кроликом.',
-                'Старт апарата здійснювали з космодрому Січан, але у 2014 році було побудовано і новіший – Веньчан, який планують використовувати для продовження космічної програми, адже до 2022 року Китай має намір завершити будівництво нової трьохмодульної орбітальної космічної станції. Космічна програма КНР вже готує тайконавтів і планує перемістити перший модуль на космодром.',
-                'Нова китайська космічна станція буде не дуже великою: згідно з інформацією South China Morning Post, одночасно на станції можуть перебувати до трьох людей. У червні цього року Космічна програма КНР проведе спільну роботу з Управлінням з питань космічного простору ООН, щоб завершити відбір заявок і запустити ряд спільних проектів. Нині в китайської програми вже є невелика станція на орбіті – «Тянгун-2» («Небесний палац» – ще одне відсилання до міфу). Улітку цього року її планово виведуть з орбіти, де вона перебуває з 2016 року. Її попередниця «Тянгун-1» у квітні минулого року також планово згоріла в атмосфері над Тихим океаном.'
-            ],
-            img: ['https://thealphacentauri.net/wp-content/uploads/2019/06/gettyimages-166609668.jpg']
-        }
-    ]
-}*/
+import Loader from '../Loader/Loader'
 
 class Post extends React.Component {
     state = {
-        data: null
+        data: null,
+        err: ''
     }
     bodyPost = (data) => {
         let templatePostBody = null,
@@ -58,27 +35,47 @@ class Post extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://192.168.0.103:8443/api/posts')
-            .then(res => res.json())
-            .then(res => this.setState({data: res}) )
+        fetch('https://xcxlow.xyz/api'+ window.location.pathname, {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer: token',
+              "Access-Control-Allow-Origin" : "*", 
+              "Access-Control-Allow-Credentials" : true
+            }
+        })
+        .then(res => res.json())
+        .then(res => {
+            res.message ?
+                this.setState({err: <p className={styles.err}>Пост отсувствует</p>}) :
+                this.setState({data: res}) 
+        }).catch(err => {
+            this.setState({err: <p className={styles.err}>Пост отсувствует</p>})
+            console.error(err)
+        })
     }
     render() {
         
         return (
-            <div className={styles.post}>
-                {this.state.data && <>
-                <div className={styles.mainImg}>
-                    <img  width='900' height='500' src={this.state.data[0].mainImg} alt=''/>
-                </div>
-                <h1>{this.state.data[0].title}</h1>
-                <div className={styles.info}>
-                    <span>Дата: {this.state.data[0].date.substring(0,10)}</span>
-                    <span><i>{this.state.data[0].views}</i></span>
-                </div> 
-                <div className={styles.body}>
-                {this.state.data && this.bodyPost(this.state.data[0])}
-                </div>
-                </> }
+           <div className={styles.post}>
+               
+                {this.state.data ? <>
+                    <div className={styles.mainImg}>
+                        <img  width='900' height='450' src={this.state.data.mainImg} alt=''/>
+                    </div>
+                    <h1>{this.state.data.title}</h1>
+                    <div className={styles.info}>
+                        <span>Дата: {this.state.data.date.substring(0,10)}</span>
+                        <span><i>{this.state.data.views}</i></span>
+                    </div> 
+                    <div className={styles.body}>
+                    {this.state.data && this.bodyPost(this.state.data)}
+                    </div>
+                    </> :
+                    <>{this.state.err || <Loader />}</>
+                }
+                
             </div>
         )
     }

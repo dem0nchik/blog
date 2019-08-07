@@ -1,13 +1,12 @@
-.post {
-}
+
 .mainImg {
-    max-width: 900px;
+    max-width: 750px;
     margin-top: 10px;
     padding: 10px 5px;
 }
 .mainImg img {
     width: 100%;
-    height: auto;
+    height: 70%;
 }
 
 .info {
@@ -17,13 +16,15 @@
 }
 
 h1 {
-    padding: 10px 5px 5px 5px; 
-    max-width: 900px;
+    padding: 10px 5px 3px 0px; 
+    margin-left: 20px;
+    max-width: 750px;
 }
-
+.info {
+    max-width:750px;
+}
 .info span {
     color: #a0a0a0;
-    font-weight: 600;
     margin: 0 10px 10px 0;
 }
 .info span i {
@@ -44,13 +45,13 @@ h1 {
 }
 
 .body { 
-    max-width: 900px;
+    max-width: 750px;
 }
 
 .article h3{
     text-indent: 1em;
     padding-bottom: 10px;
-    margin: 60px 7px -5px 7px;
+    margin: 20px 7px -5px 7px;
     font-style: italic;
     letter-spacing: 0.5px;
 }
@@ -62,21 +63,36 @@ h1 {
     text-indent: 0.5em;
     padding-bottom: 5px;
     margin: 7px 10px;
-    border-bottom: 1px solid rgba(150, 150, 150, 0.1);
     line-height: 1.7;
 }
 
-
+.err {
+    width: 700px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 40px;
+    color: #aa3030;
+}
 @media screen and (max-width: 600px) {
     .info span i::before {
        margin: 0px 6px 0 0;
     }
     .article p{
-        border-bottom: 1px solid rgba(150, 150, 150, 0.2);
-        margin: 20px 10px 20px 12px;
+        border-bottom: 1px solid rgba(150, 150, 150, 0.1);
+        margin: 20px;
         line-height: 1.8;
     }
     .article h3{
-        margin: 60px 10px -15px 12px;
+        margin: 15px 5px -15px 15px;
+    }
+    .info span i {
+        margin-bottom: -20px;
+    }
+    .info span {
+        font-weight: 300;
+    }
+    .err {
+        max-width: 400px;
     }
 }

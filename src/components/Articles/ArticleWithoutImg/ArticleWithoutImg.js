@@ -1,13 +1,9 @@
 import React from 'react'
-import styles from './Article.module.css'
+import styles from './ArticleWithoutImg.module.css'
 
-const Article = props => {
+const ArticleWithoutImg = props => {
     return (
         <div className={styles.article}>
-            <div className={styles.articleImg}>
-                <a href={props.link}><img alt='' src={props.img}/></a>
-            </div>
-
             <div className={styles.mk}>
                 <a href={props.link}><h3>{props.title}</h3></a>
                 <p>{props.text}</p>
@@ -19,4 +15,4 @@ const Article = props => {
     )
 }
 
-export default Article
+export default ArticleWithoutImg
