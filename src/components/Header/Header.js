@@ -22,7 +22,7 @@ const Header = () => {
                         <ul className={`${style.ultoggle} ${style.ultoggled}`}></ul> :
                         <ul className={style.ultoggle}> <div>
                             <li title='Новости'>
-                                <a href='/'>Новости</a>
+                                <a href='/allposts'>Новости</a>
                             </li>
                             <li title='Обо мне'>
                                 <a href='/about'>Обо мне</a>

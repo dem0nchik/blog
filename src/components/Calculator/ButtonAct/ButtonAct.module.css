@@ -1,0 +1,22 @@
+.act {
+    display: block;
+    width: 25px;
+    height: 25px;
+    padding: 3px;background: linear-gradient(0, rgb(235,235,256), rgb(213, 224, 238), rgb(235,235,256));
+    border: 1px solid rgb(142, 156, 173);
+    text-align: center;
+    color: rgb(40, 67, 91);
+    font-weight: 600;
+    cursor: pointer;
+    margin: 3px 5px;
+    font-size: 12px;
+}
+.act:hover {
+    background: linear-gradient(0, #fff, rgb(255, 208, 109), #fff);
+}
+.equals {
+    padding-top: 21px;
+    padding-bottom: 24px;
+    font-weight: 700;
+    font-size: 20px;
+}

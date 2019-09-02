@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './Post.module.css'
 import Loader from '../Loader/Loader'
+import { connect } from 'react-redux'
+import { getPostData } from '../../actions/actionCreator.js'
 
 class Post extends React.Component {
     state = {
-        data: null,
         err: ''
     }
     bodyPost = (data) => {
@@ -49,28 +50,27 @@ class Post extends React.Component {
         .then(res => {
             res.message ?
                 this.setState({err: <p className={styles.err}>Пост отсувствует</p>}) :
-                this.setState({data: res}) 
+                this.props.getPostData(res)
         }).catch(err => {
             this.setState({err: <p className={styles.err}>Пост отсувствует</p>})
             console.error(err)
         })
     }
     render() {
-        
         return (
            <div className={styles.post}>
                
-                {this.state.data ? <>
+                {this.props.post.postData ? <>
                     <div className={styles.mainImg}>
-                        <img  width='900' height='450' src={this.state.data.mainImg} alt=''/>
+                        <img  width='900' height='450' src={this.props.post.postData.mainImg} alt=''/>
                     </div>
-                    <h1>{this.state.data.title}</h1>
+                    <h1>{this.props.post.postData.title}</h1>
                     <div className={styles.info}>
-                        <span>Дата: {this.state.data.date.substring(0,10)}</span>
-                        <span><i>{this.state.data.views}</i></span>
+                        <span>Дата: {this.props.post.postData.date.substring(0,10)}</span>
+                        <span><i>{this.props.post.postData.views}</i></span>
                     </div> 
                     <div className={styles.body}>
-                    {this.state.data && this.bodyPost(this.state.data)}
+                    {this.props.post.postData && this.bodyPost(this.props.post.postData)}
                     </div>
                     </> :
                     <>{this.state.err || <Loader />}</>
@@ -81,4 +81,6 @@ class Post extends React.Component {
     }
 }
 
-export default Post
+export default connect(state => ({
+    post: state.posts,
+  }), {getPostData})(Post)

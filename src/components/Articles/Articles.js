@@ -4,6 +4,7 @@ import Article from './Article/Article'
 import ArticleWithoutImg from './ArticleWithoutImg/ArticleWithoutImg'
 import utilits from '../../utilits/utilits'
 import Loader from '../Loader/Loader'
+import config from '../../config'
 
 class Articles extends React.Component {
     state = {
@@ -13,10 +14,11 @@ class Articles extends React.Component {
     templateArticles = () => {
         let link = '',title = '',
         img = '', text = '';
+
         let templateArticle = []
         if(this.props.data.length) {
             this.props.data.forEach(el=> {
-                link = 'https://xcxlow.xyz/posts/' +el._id;
+                link = config.addr + '/posts/' + el._id;
                 title = el.title
                 el.mainImg ? img = el.mainImg : img = ''
                 el.body[0].text[0] ? text = utilits.truncate(el.body[0].text[0]) : text =  ''
@@ -32,7 +34,7 @@ class Articles extends React.Component {
     render() {
         return (
             <div className={styles.articles}>
-               {this.props.data.length ? 
+               {this.props.data ? 
                     this.templateArticles() :
                     <Loader /> 
                 }

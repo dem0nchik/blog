@@ -1,32 +1,16 @@
 import React from 'react'
-import styles from './Mainpage.module.css'
+import styles from './MainPage.module.css'
 import Articles from '../../components/Articles/Articles'
 import Widget from '../../components/Widget/Widget'
-
-class Mainpage extends React.Component {
-    state = {
-        data: []
-    }
-
-    componentDidMount() {
-        fetch('https://xcxlow.xyz/api/posts', {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer: token',
-              "Access-Control-Allow-Origin" : "*", 
-              "Access-Control-Allow-Credentials" : true
-            }
-        })
-        .then(res => res.json())
-        .then(res => this.setState({data: res}) )
-    }
+import Teaser from '../../components/Teaser/Teaser'
+class MainPage extends React.Component {
+    
     render() {
         return (
             <div className={styles.mainpage}>
+                <Teaser />
                 <div className={styles.content}>
-                    <Articles data={this.state.data} />
+                    <Articles data={this.props.data.data} />
                     <Widget />
                 </div>
             </div>
@@ -34,4 +18,4 @@ class Mainpage extends React.Component {
     }
 }
 
-export default Mainpage
+export default MainPage

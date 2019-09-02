@@ -1,0 +1,19 @@
+.num {
+    display: block;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    padding: 3px;background: linear-gradient(0, rgb(235,235,256), rgb(244, 241, 249), rgb(235,235,256));
+    border: 1px solid rgb(142, 156, 173);
+    text-align: center;
+    color: rgb(30, 57, 91);
+    font-weight: 600;
+    cursor: pointer;
+    margin: 3px 5px;
+}
+.num:hover {
+    background: linear-gradient(0, #fff, rgb(255, 208, 109), #fff);
+}
+.zero {
+    width: 68px;
+}

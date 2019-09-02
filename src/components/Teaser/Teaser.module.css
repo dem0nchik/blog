@@ -1,0 +1,34 @@
+.teaser {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.teaser img:hover {
+    object-position: 7px 0;
+}
+
+.teaser img {
+    transition: 0.7s;
+}
+
+.fluid{
+    margin: -210px;
+    width: 100%;
+    color: #fff;
+    font-family: "Lato",sans-serif;
+    text-align: center;
+}
+.fluid p{
+    font-size: 20px;
+    padding: 0 10px;
+}
+.fluid h1{
+    margin: 0 auto;
+    margin-top: -10px;
+    padding-bottom: 15px;
+    font-size: 40px;
+}
