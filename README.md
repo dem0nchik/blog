@@ -1,10 +1,5 @@
 <h2>Личный сайт-блог(мини CMS)</h2>
-<h2><a href="https://xcxlow.xyz">Ссылка на сайт</a></h2>
 
-<h2>Присувтствует админ панель</h2>
-<h2><a href="https://admin.xcxlow.xyz">Ссылка на панель</a></h2>
-
-<p>Сервер работает на NGINX</p>
 <p>Back-End - Node.js</p>
 <p>Front-end - React</p>
 
